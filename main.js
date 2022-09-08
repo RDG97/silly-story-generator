@@ -11,31 +11,47 @@ function randomValueFromArray(array){
 
                     // RAW TEXT STRINGS
 
-let stortyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
+const storyText = 'It was 94 fahrenheit outside, so :insertX: went for a walk. When they got to :insertY:, they stared in horror for a few moments, then :insertZ:. Bob saw the whole thing, but was not surprised — :insertX: weighs 300 pounds, and it was a hot day.';
 
-let insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
+const insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
 
-let insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
+const insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
 
-let insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
+const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
 
 randomize.addEventListener('click', result);
 
                     // EVENT LISTENER AND PARTIAL FUNCTION
 
+
 function result() {
+
+    let newStory = storyText;
+
+const xItem = randomValueFromArray(insertX);
+
+const yItem = randomValueFromArray(insertY);
+
+const zItem = randomValueFromArray(insertZ);
+
+newStory = newStory.replaceAll(':insertX:',xItem);
+newStory = newStory.replaceAll(':insertY:',yItem);
+newStory = newStory.replaceAll(':insertZ:',zItem);
 
   if(customName.value !== '') {
     const name = customName.value;
+    newStory = newStory.replaceAll('Bob', name);
 
   }
 
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
+    const weight = `${Math.round(300*0.071428)} stone`;
+    const temperature =  `${Math.round((94-32) * .5556)} centigrade`;
+    newStory = newStory.replaceAll('94 fahrenheit', temperature);
+    newStory = newStory.replaceAll('300 pounds', weight);
 
   }
 
-  story.textContent = ;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
