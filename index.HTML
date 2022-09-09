@@ -38,6 +38,7 @@
   </head>
 
   <body>
+    
     <div>
       <label for="customname">Enter custom name:</label>
       <input id="customname" type="text" placeholder="">
@@ -50,6 +51,19 @@
       <button class="randomize">Generate random story</button>
     </div>
     <p class="story"></p>
+    <div class="form">
+      <label for="personAdd">Add a person</label>
+      <input type="string" required id="personAdd" class="personAdd">
+      <br>
+      <label for="placeAdd">Add a place </label>
+      <input type="string" required id="placeAdd" class="placeAdd">
+      <br>
+      <label for="FateAdd">Add a fate  </label>
+      <input type="string" required id="fateAdd" class="fateAdd">
+      
+      <input type="submit" value="Add variable(s)" class="varSubmit">
+    </div>
+    
     
 
   <script src="main.js"></script>
