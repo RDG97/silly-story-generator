@@ -21,8 +21,27 @@ const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewal
 
 randomize.addEventListener('click', result);
 
-                    // EVENT LISTENER AND PARTIAL FUNCTION
+                    // EVENT LISTENER AND FUNCTION
 
+                                // Stretch goal, let user add variables!
+
+const varSubmit = document.querySelector('.varSubmit');
+
+const personA = document.querySelector('.personAdd');
+
+const placeA = document.querySelector('.placeAdd');
+
+const fateA = document.querySelector('.fateAdd');
+
+function addVars() {
+  const newLength = insertX.push(personA.value);
+  const newLength2 = insertY.push(placeA.value);
+  const newLength3 = insertZ.push(fateA.value);
+}
+
+
+varSubmit.addEventListener('click', addVars);
+                                // end stretch goal
 
 function result() {
 
