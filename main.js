@@ -26,18 +26,21 @@ randomize.addEventListener('click', result);
                                 // Stretch goal, let user add variables!
 
 const varSubmit = document.querySelector('.varSubmit');
-
 const personA = document.querySelector('.personAdd');
-
 const placeA = document.querySelector('.placeAdd');
-
 const fateA = document.querySelector('.fateAdd');
 
 function addVars() {
   const newLength = insertX.push(personA.value);
   const newLength2 = insertY.push(placeA.value);
   const newLength3 = insertZ.push(fateA.value);
-}
+
+  const inputs = document.querySelectorAll('#personAdd, #placeAdd, #fateAdd');
+  inputs.forEach(input => {
+    input.value = '';
+  });
+
+};
 
 
 varSubmit.addEventListener('click', addVars);
